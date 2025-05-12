@@ -1,0 +1,19 @@
+import toretto.*
+
+describe "Modelado Simulacion Toretto y su taller" {
+
+  test "Autos en condiciones" {
+    assert.equals([ferrari, flechaRubi, intocable], toretto.autosEnCondiciones())  
+  }
+
+  test "Autos en condiciones tras realizar prueba de velocidad" {
+    toretto.realizarPruebaDeVelocidad()
+
+    assert.equals([flechaRubi], toretto.autosEnCondiciones())  
+  }
+  test "mandar esos auto que no estan en condiciones al taller" {
+    toretto.realizarPruebaDeVelocidad()
+
+    assert.equals([flechaRubi], taller.autosAReparar())  
+  }
+}
